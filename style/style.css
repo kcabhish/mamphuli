@@ -51,7 +51,7 @@ div.nav-bar{
 }
 @media all and (min-width:500px){
     .nav-bar a{
-        margin:1.5%;
+        padding:1.5%;
         text-align:center;
         border-right: 2px solid white;
         font-weight: bold;
@@ -63,7 +63,7 @@ div.nav-bar{
     }
     .nav-bar a:hover{
         color:white;
-     /*   background-color:#D4001C;*/
+        background-color:#D4001C;
         position:relative;
     }
 
@@ -71,7 +71,7 @@ div.nav-bar{
 
 @media all and (max-width:500px){
 .nav-bar a{
-    margin:1.5%;
+    padding:1.5%;
     text-align:center;
     border:none;
     font-weight: bold;
