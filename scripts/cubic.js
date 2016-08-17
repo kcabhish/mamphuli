@@ -9,7 +9,9 @@ cubicApp.config(function($locationProvider,$routeProvider){
                 templateUrl : '/views/home.html'
             })
             .when('/classes',{
+                controller : 'ClassCtrl',
                 templateUrl : '/views/classes.html'
+                
             })
             .when('/employees',{
                 templateUrl : '/views/employee.html'

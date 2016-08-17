@@ -1,4 +1,4 @@
-<dashboard-content ng-repeat="menu in menuItems"
+<dashboard-content ng-repeat="menu in menuItems" ng-if="menu.name!='Home'"
                    image-path="menu.imagepath"
                    image-title="menu.name"
                    path="menu.path"></dashboard-content>

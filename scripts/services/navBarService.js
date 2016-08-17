@@ -42,6 +42,32 @@ angular.module("cubicApp").service("navBarService",function(){
             'imagepath': '/static_files/svg/inventory.svg',
             'previlege':[]
         }];
-                
+    
+    this.classDashboardItems = [
+        {
+            'name':'Home',
+            'path':'views#!/home',
+            'imagepath': '/static_files/svg/home.svg',
+            'previlege':[]
+        },
+        {
+            'name':'Class List',
+            'path':'views#!/classes',
+            'imagepath': '/static_files/svg/home.svg',
+            'previlege':[]
+        },
+        {
+            'name':'Class Sessions',
+            'path':'views#!/classes',
+            'imagepath': '/static_files/svg/home.svg',
+            'previlege':[]
+        },
+        {
+            'name':'Instructors',
+            'path':'views#!/classes',
+            'imagepath': '/static_files/svg/home.svg',
+            'previlege':[]
+        }
+    ];    
                         
    });
