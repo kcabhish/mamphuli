@@ -30,7 +30,7 @@ div.nav-bar{
     }
 }
 @media all and (min-width:500px){
-a{
+.nav-bar a{
     margin:1.5%;
     text-align:center;
     border-right: 2px solid black;
@@ -44,7 +44,7 @@ a{
 }
 
 @media all and (max-width:500px){
- a{
+.nav-bar a{
     margin:1.5%;
     text-align:center;
     border:none;
