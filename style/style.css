@@ -1,4 +1,8 @@
 
+.dashboard-content > .dash-image > img {
+    height:200px;
+    width:200px;
+}
 
 div.nav-bar{
     display: flex;
