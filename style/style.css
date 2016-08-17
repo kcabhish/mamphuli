@@ -39,8 +39,8 @@ div.nav-bar{
     flex-wrap: wrap;
     flex-direction: row;
     flex-grow: 1;
-    background-color:#dddddd;
-    border: 5px outset #dddddd;
+    background-color:black;
+   /* border: 5px outset #dddddd;*/
     text-transform: uppercase;
 }
 
@@ -50,17 +50,23 @@ div.nav-bar{
     }
 }
 @media all and (min-width:500px){
-.nav-bar a{
-    margin:1.5%;
-    text-align:center;
-    border-right: 2px solid black;
-    font-weight: bold;
-    color:chocolate;
-    align-items: center;
-    flex-wrap:wrap;
-    flex-grow:1;
-    text-decoration: none;
-}
+    .nav-bar a{
+        margin:1.5%;
+        text-align:center;
+        border-right: 2px solid white;
+        font-weight: bold;
+        color:#D4001C;
+        align-items: center;
+        flex-wrap:wrap;
+        flex-grow:1;
+        text-decoration: none;
+    }
+    .nav-bar a:hover{
+        color:white;
+     /*   background-color:#D4001C;*/
+        position:relative;
+    }
+
 }
 
 @media all and (max-width:500px){
@@ -69,7 +75,7 @@ div.nav-bar{
     text-align:center;
     border:none;
     font-weight: bold;
-    color:chocolate;
+    color:#D4001C;
     align-items: center;
     flex-wrap:wrap;
     flex-grow:1;
