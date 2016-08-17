@@ -1,9 +1,6 @@
-<h1>Dashboard for the home page goes here</h1>
-<div class="dashboard-content">
-    <div class="dash-image">
-        <img src="/static_files/svg/consultants.svg">
-    </div>
-    <div class="dash-title">
-        Something
-    </div>    
-</div>
+<dashboard-content ng-repeat="menu in menuItems"
+                   image-path="menu.imagepath"
+                   image-title="menu.name"
+                   path="menu.path"></dashboard-content>
+
+
