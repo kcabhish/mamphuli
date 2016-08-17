@@ -1,10 +1,3 @@
-body{
-    margin-left:5%;
-    margin-right:5%;
-}
-.nav-bar a{
-    margin-right:30px;
-}
 
 .dashboard-content > .dash-image > img {
     height:200px;
@@ -25,7 +18,7 @@ div.nav-bar{
         flex-direction: column;
     }
 }
-
+@media all and (min-width:500px){
 a{
     margin:1.5%;
     text-align:center;
@@ -37,13 +30,21 @@ a{
     flex-wrap:wrap;
     flex-grow:1;
 }
+}
 
-@media all and(max-width:500px){
-    a{
-        text-align: center;
-        align-items: center;
-        flex-wrap: wrap;
-        border: none;
+@media all and (max-width:500px){
+ a{
+    margin:1.5%;
+    text-align:center;
+    border:none;
+    font-weight: bold;
+    color:chocolate;
+    align-items: center;
+    text-decoration:underline;
+    flex-wrap:wrap;
+    flex-grow:1;
 }
     
     }
+
+
