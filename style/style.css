@@ -1,23 +1,50 @@
 
+@media all and (min-width:800px){
 .dashboard-content{
     border: 2px solid #a1a1a1;
-    padding: 10px 40px;
+    padding: 4%;
     background: #dddddd;
-    border-radius: 25px;
-    height:300px;
-    width:300px;
+    border-radius: 10%;
+    height:20%;
+    width:20%;
     display:inline-flex;
+    flex-flow: row;
+    flex-wrap:wrap;
     margin:2%;
     box-shadow: 10px 10px 5px #888888;
    
 }
- 
+    }
+
+@media all and (max-width:800px){
+.dashboard-content{
+    border: 2px solid #a1a1a1;
+    padding: 10%;
+    margin-bottom: 2%;
+    background: #dddddd;
+    border-radius: 10%;
+    height:10%;
+    width:100%;
+    display:flex;
+    flex-flow: column;
+    margin:4%;
+    box-shadow: 10px 10px 5px #888888;
+   
+}
+    }
+@media all and (min-width:800px){
  .dashboard-content a{
-        height:100%;
-        width:100%;
+        text-transform: uppercase;
+        text-decoration: none;
+        flex-wrap:wrap;
+    }
+    }
+@media all and (max-width:800px){
+    .dashboard-content a{
         text-transform: uppercase;
         text-decoration: none;
     }
+}
 .dash-image{
     position:relative;
     height:75%;
@@ -60,12 +87,15 @@ div.nav-bar{
         flex-wrap:wrap;
         flex-grow:1;
         text-decoration: none;
+        
     }
     .nav-bar a:hover{
         color:white;
-     /*   background-color:#D4001C;*/
+      background-color:#D4001C;
         position:relative;
     }
+    
+    .nav-bar a:
 
 }
 
