@@ -5,3 +5,41 @@ body{
 .nav-bar a{
     margin-right:30px;
 }
+
+
+div.nav-bar{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-grow: 1;
+    background-color:#dddddd;
+    border: 5px outset #dddddd;
+}
+
+@media all and (max-width:500px){
+    div.nav-bar{
+        flex-direction: column;
+    }
+}
+
+a{
+    margin:1.5%;
+    text-align:center;
+    border-right: 2px solid black;
+    font-weight: bold;
+    color:chocolate;
+    align-items: center;
+    text-decoration:underline;
+    flex-wrap:wrap;
+    flex-grow:1;
+}
+
+@media all and(max-width:500px){
+    a{
+        text-align: center;
+        align-items: center;
+        flex-wrap: wrap;
+        border: none;
+}
+    
+    }
