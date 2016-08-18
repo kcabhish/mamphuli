@@ -113,4 +113,22 @@ div.nav-bar{
     
     }
 
+div.class-list {
+    width:100%;
+}
+.class-list .class-add {
+    width:;100%;
+    margin;10%;
+    position:fixed;
+    padding:5%;
+    background-color: #D4001C;
+    color: #ffffff;
+    font-size: 2em;
+}
 
+.class-list .class-add input[type=text] {
+    padding: 2%;
+    color: #000000;
+    width: 100%;
+    box-sizing: border-box;
+}
