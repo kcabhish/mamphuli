@@ -121,7 +121,7 @@ div.class-list {
 .class-list .class-add {
     width:;100%;
     margin;10%;
-    position:fixed;
+    position:flex;
     padding:5%;
     background-color: #D4001C;
     color: #ffffff;
