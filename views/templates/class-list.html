@@ -1,8 +1,18 @@
-<h1>Class Lists will go here</h1>
-<input type="text" ng-model="classModel.classTitle" placeholder="Enter new class">
-<button ng-click="addClass()">Add</button>
-<ol>
-    <ul ng-repeat="class in classes">
-        {{class.title}}
-    </ul>
-</ol>
+<div class="class-list">
+    <div class="class-add">
+        Class List : <input type="text" ng-model="classModel.classTitle" placeholder="Enter new class">
+        <button ng-click="addClass()">Add</button>
+    </div>
+    
+    <!--Code below should be rendered as a grid system-->
+    <div class="class-list-grid">
+        <div class="list-header">
+            <span class="left-col">Class List</span>
+            <span class="right-col">search bar</span>
+        </div>
+        <div class="list-body" ng-repeat="class in classes">
+            <span class="left-col">{{class.title}}</span>
+            <span class="right-col">Edit / Remove</span>
+        </div>
+    </div>
+</div>
