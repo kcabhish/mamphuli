@@ -1,25 +1,50 @@
 
+@media all and (min-width:550px){
 .dashboard-content{
     border: 2px solid #a1a1a1;
-    padding: 10px 40px;
+    padding: 5%;
     background: #dddddd;
-    border-radius: 25px;
-    height:300px;
-    width:300px;
+    border-radius: 10%;
+    height:20%;
+    width:auto;
     display:inline-flex;
+    flex-flow:row;
     margin:2%;
     box-shadow: 10px 10px 5px #888888;
    
 }
- 
+    }
+
+@media all and (max-width:550px){
+.dashboard-content{
+    border: 2px solid #a1a1a1;
+    padding: 10%;
+    margin-bottom: 2%;
+    background: #dddddd;
+    border-radius: 10%;
+    height:10%;
+    width:40%;
+    display:inline-flex;
+    flex-flow: column;
+    margin:4%;
+    box-shadow: 10px 10px 5px #888888;
+   
+}
+    }
+@media all and (min-width:500px){
  .dashboard-content a{
-        height:100%;
-        width:100%;
         text-transform: uppercase;
         text-decoration: none;
     }
+    }
+@media all and (max-width:500px){
+    .dashboard-content a{
+        font-size:1em;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+}
 .dash-image{
-    position:relative;
     height:75%;
     width:100%;
 }
@@ -29,6 +54,7 @@
     text-align:center;
 }
 .dashboard-content .dash-image img {
+    align-content: center;
     position:relative;
     height:100%;
     width:100%;
@@ -60,12 +86,15 @@ div.nav-bar{
         flex-wrap:wrap;
         flex-grow:1;
         text-decoration: none;
+        
     }
     .nav-bar a:hover{
         color:white;
         background-color:#D4001C;
         position:relative;
     }
+    
+    .nav-bar a:
 
 }
 
