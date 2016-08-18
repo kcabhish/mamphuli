@@ -7,25 +7,17 @@
     <!--Code below should be rendered as a grid system-->
     <div class="class-list-grid">
         <div class="list-header">
-            <span class="left-col">Class List</span>
-            <span class="right-col">search bar</span>
+            <span class="left-col">
+                Class List
+            </span>
+            <span class="right-col">
+                <input type="text" ng-model="searchText" placeholder="search...">
+            </span>
         </div>
         
-        <div class="list-body" class="active">
+        <div class="list-body" ng-repeat="class in classes|filter:searchText">
             <span class="left-col">{{class.title}}</span>
             <span class="right-col">Edit / Remove</span>
         </div>
-        <div class="list-body" class="inactive">
-            <span class="left-col">{{class.title}}</span>
-            <span class="right-col">Edit / Remove</span>
-        </div>
-<!--
-leave ng-repeat stuff for now
-        
-        <div class="list-body" ng-repeat="class in classes">
-            <span class="left-col">{{class.title}}</span>
-            <span class="right-col">Edit / Remove</span>
-        </div>
--->
     </div>
 </div>
