@@ -1,9 +1,11 @@
-
+body{
+    background: #dddddd;
+}
 @media all and (min-width:550px){
     .dashboard-content{
         border: 2px solid #a1a1a1;
         padding: 5%;
-        background: #dddddd;
+        background-color:white;
         border-radius: 10%;
         height:20%;
         width:auto;
@@ -20,7 +22,7 @@
         border: 2px solid #a1a1a1;
         padding: 10%;
         margin-bottom: 2%;
-        background: #dddddd;
+        background-color:white;
         border-radius: 10%;
         height:10%;
         width:40%;

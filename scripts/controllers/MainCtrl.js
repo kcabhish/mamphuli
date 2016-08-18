@@ -1,4 +1,4 @@
-angular.module("cubicApp").controller("MainCtrl",['$scope','navBarService',function($scope,navBarService){   
+angular.module("cubicApp").controller("MainCtrl",['$scope','navBarService','staticService',function($scope,navBarService,staticService){   
     $scope.menuItems = navBarService.menuBarItems;
-    $scope.title = "HOME";
+    $scope.title = staticService.header;
 }]);
