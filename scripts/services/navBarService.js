@@ -52,7 +52,7 @@ angular.module("cubicApp").service("navBarService",function(){
         },
         {
             'name':'Class List',
-            'path':'views#!/classes',
+            'path':'views#!/classes/classlist',
             'imagepath': '/static_files/svg/classlist.svg',
             'previlege':[]
         },

@@ -10,8 +10,11 @@ cubicApp.config(function($locationProvider,$routeProvider){
             })
             .when('/classes',{
                 controller : 'ClassCtrl',
-                templateUrl : '/views/classes.html'
-                
+                templateUrl : '/views/classes.html'   
+            })
+            .when('/classes/classlist',{
+                controller:'ClassListCtrl',
+                templateUrl:'/views/templates/class-list.html'
             })
             .when('/employees',{
                 templateUrl : '/views/employee.html'
@@ -25,6 +28,7 @@ cubicApp.config(function($locationProvider,$routeProvider){
             .when('/inventory',{
                 templateUrl : '/views/inventory.html'
             })
+            
     ;
     $locationProvider
         .html5Mode(false)
