@@ -6,10 +6,12 @@ angular.module("cubicApp").controller("ClassListCtrl",['$scope','classListServic
     //This object will be used of ng-model
     $scope.classModel = {
         'classTitle':''
-    }
+    };
+    
+    $scope.searchText = '';
     
     $scope.addClass = addClass;
-    console.log(addClass);
+
     /*
     This function will add the new class into the list
     */

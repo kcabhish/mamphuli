@@ -10,9 +10,22 @@
             <span class="left-col">Class List</span>
             <span class="right-col">search bar</span>
         </div>
+        
+        <div class="list-body" class="active">
+            <span class="left-col">{{class.title}}</span>
+            <span class="right-col">Edit / Remove</span>
+        </div>
+        <div class="list-body" class="inactive">
+            <span class="left-col">{{class.title}}</span>
+            <span class="right-col">Edit / Remove</span>
+        </div>
+<!--
+leave ng-repeat stuff for now
+        
         <div class="list-body" ng-repeat="class in classes">
             <span class="left-col">{{class.title}}</span>
             <span class="right-col">Edit / Remove</span>
         </div>
+-->
     </div>
 </div>
