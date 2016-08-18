@@ -1,36 +1,37 @@
 
 @media all and (min-width:550px){
-.dashboard-content{
-    border: 2px solid #a1a1a1;
-    padding: 5%;
-    background: #dddddd;
-    border-radius: 10%;
-    height:20%;
-    width:auto;
-    display:inline-flex;
-    flex-flow:row;
-    margin:2%;
-    box-shadow: 10px 10px 5px #888888;
-   
-}
+    .dashboard-content{
+        border: 2px solid #a1a1a1;
+        padding: 5%;
+        background: #dddddd;
+        border-radius: 10%;
+        height:20%;
+        width:auto;
+        display:inline-flex;
+        flex-flow:row;
+        margin:2%;
+        box-shadow: 10px 10px 5px #888888;
+
     }
+}
 
 @media all and (max-width:550px){
-.dashboard-content{
-    border: 2px solid #a1a1a1;
-    padding: 10%;
-    margin-bottom: 2%;
-    background: #dddddd;
-    border-radius: 10%;
-    height:10%;
-    width:40%;
-    display:inline-flex;
-    flex-flow: column;
-    margin:4%;
-    box-shadow: 10px 10px 5px #888888;
-   
-}
+    .dashboard-content{
+        border: 2px solid #a1a1a1;
+        padding: 10%;
+        margin-bottom: 2%;
+        background: #dddddd;
+        border-radius: 10%;
+        height:10%;
+        width:40%;
+        display:inline-flex;
+        flex-flow: column;
+        margin:4%;
+        box-shadow: 10px 10px 5px #888888;
+
     }
+}
+
 @media all and (min-width:500px){
  .dashboard-content a{
         text-transform: uppercase;
@@ -99,19 +100,18 @@ div.nav-bar{
 }
 
 @media all and (max-width:500px){
-.nav-bar a{
-    padding:1.5%;
-    text-align:center;
-    border:none;
-    font-weight: bold;
-    color:#D4001C;
-    align-items: center;
-    flex-wrap:wrap;
-    flex-grow:1;
-    text-decoration: none;
-}
-    
+    .nav-bar a{
+        padding:1.5%;
+        text-align:center;
+        border:none;
+        font-weight: bold;
+        color:#D4001C;
+        align-items: center;
+        flex-wrap:wrap;
+        flex-grow:1;
+        text-decoration: none;
     }
+}
 
 div.class-list {
     width:100%;
@@ -131,4 +131,22 @@ div.class-list {
     color: #000000;
     width: 100%;
     box-sizing: border-box;
+}
+.title-bar{
+    position:relative;
+    display:flex;
+    height:100px;
+    background-color:#D4001C;
+    text-transform: uppercase;
+    font-family:cursive;
+    font-weight: bolder;
+    color:white;
+    padding-left:45%;
+}
+.title-bar h1{
+    position:relative;
+    margin-top:4%;
+}
+h1{
+    font-size:30px;
 }
