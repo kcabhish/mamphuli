@@ -27,5 +27,6 @@ angular.module("cubicApp").controller("ClassListCtrl",['$scope','classListServic
         };
         
         $scope.classes.push(newClassTitle);
+        $scope.classModel.classTitle = "";
     }
 }]);

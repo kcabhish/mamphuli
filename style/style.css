@@ -61,10 +61,15 @@ button{
     position: relative;
     height: 5%;
     background-color: #2f4155;
-    color:white;
     padding: 2%;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
+}
+.container-head .title{
+    color:white;
+}
+.container-head .search-option{
+    float:right;
 }
 .container-body{
     position:relative;
