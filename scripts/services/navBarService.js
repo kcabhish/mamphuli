@@ -21,7 +21,7 @@ angular.module("cubicApp").service("navBarService",function(){
         {
             'name':'Employees',
             'path': 'views#!/employees',
-            'imagepath': '/static_files/svg/employee.svg',
+            'imagepath': '/static_files/svg/employee2.svg',
             'previlege':[]
         },
         {
