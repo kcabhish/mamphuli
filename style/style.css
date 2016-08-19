@@ -94,71 +94,84 @@ button{
     position:relative;
     margin-top:40px;
 }
-@media all and (min-width:550px){
+@media all and (min-width:800px){
     .dashboard-content{
         border: 2px solid #a1a1a1;
-        padding: 5%;
         background-color:white;
         border-radius: 10%;
         height:20%;
-        width:auto;
+        width:20%;
         display:inline-flex;
-        flex-flow:row;
+        flex-flow: row;
+        flex-wrap:wrap;
+        justify-content: center;
         margin:2%;
         box-shadow: 10px 10px 5px #888888;
 
     }
 }
 
-@media all and (max-width:550px){
+@media all and (max-width:800px){
     .dashboard-content{
         border: 2px solid #a1a1a1;
-        padding: 10%;
         margin-bottom: 2%;
         background-color:white;
         border-radius: 10%;
-        height:10%;
-        width:40%;
+        min-width: 200px;
+        height:20%;
+        width:20%;
         display:inline-flex;
-        flex-flow: column;
+        flex-flow:column;
+        flex-flow:wrap;
+        justify-content: center;
         margin:4%;
         box-shadow: 10px 10px 5px #888888;
 
     }
 }
 
-@media all and (min-width:500px){
+
+@media all and (min-width:800px){
  .dashboard-content a{
+        font-size: 1em;
         text-transform: uppercase;
         text-decoration: none;
+        padding:25%;
     }
     }
-@media all and (max-width:500px){
+
+@media all and (max-width:800px){
     .dashboard-content a{
         font-size:1em;
         text-transform: uppercase;
         text-decoration: none;
+        padding:25%;
     }
 }
+
 .dash-image{
-    height:75%;
+    
+    height:100%%;
     width:100%;
 }
 .dash-title{
+   
     margin-top:10%;
     font-family:cursive;
     text-align:center;
+
 }
 .dashboard-content .dash-image img {
-    align-content: center;
+    
     position:relative;
+    align-content: center;
     height:100%;
     width:100%;
 }
 
 div.nav-bar{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
     flex-grow: 1;
     background-color:black;
