@@ -1,11 +1,32 @@
-<div class="class-list">
-    <div class="class-add">
-        Class List : <input type="text" ng-model="classModel.classTitle" placeholder="Enter new class">
-        <button ng-click="addClass()">Add</button>
+<div class="container-main">
+    <div class="container-head">
+            Class Title : <input type="text" ng-model="classModel.classTitle" placeholder="Enter new class">
+        
+            <button ng-click="addClass()">Add</button>    
+        
+        
     </div>
     
     <!--Code below should be rendered as a grid system-->
-    <div class="class-list-grid">
+    <div class="container-body">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan='2'>
+                        Class Title : <input type="text" ng-model="classModel.classTitle" placeholder="Enter new class">
+                        <button ng-click="addClass()">Add</button>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Toggle Status
+                    </th>
+                    <th> Classes </th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
         <div class="list-header">
             <span class="left-col">
                 Class List
