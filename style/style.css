@@ -69,6 +69,8 @@ button{
 .container-body{
     position:relative;
     height:80%;
+    margin-left:2%;
+    margin-right:2%;
 }
 .container-body .list-header{
     height:15%;
