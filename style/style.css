@@ -1,5 +1,98 @@
 body{
     background: #dddddd;
+    width:100%;
+}
+h1{
+   font-size:3em;
+}
+h2{
+   font-size:2.8em; 
+}
+h3{
+   font-size:2.6em; 
+}
+h4{
+   font-size:2.4em; 
+}
+h5{
+   font-size:2.2em; 
+}
+h6{
+   font-size:2.8em; 
+}
+h7{
+    font-size:1em;
+}
+input[type=text] {
+    width: 200px;
+    height:25px;   
+}
+button{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.container-main{
+    width:85%;
+    height:500px;
+    margin:5%;
+    background-color:white;
+    border-radius: 25px;
+    box-shadow: 10px 10px 5px #888888;
+}
+.container-head{
+    margin-top: -30px;
+    position: relative;
+    height: 5%;
+    background-color: #2f4155;
+    color:white;
+    padding: 2%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+.container-body{
+    position:relative;
+    height:80%;
+}
+.container-body .list-header{
+    height:15%;
+    background-color:red;
+}
+.container-body .list-body{
+    margin-left:2%;
+    margin-right:2%;
+}
+.title-bar{
+    margin-bottom:2%;
+    position:relative;
+    display:flex;
+    height:100px;
+    background-color:#D4001C;
+    text-transform: uppercase;
+    font-family:cursive;
+    font-weight: bolder;
+    color:white;
+    padding-left:5%;
+}
+.title-bar h7{
+    position:relative;
+    margin-top:40px;
 }
 @media all and (min-width:800px){
     .dashboard-content{
@@ -128,10 +221,9 @@ div.nav-bar{
     }
 }
 
-div.class-list {
-    width:100%;
-}
-.class-list .class-add {
+
+
+/*.class-list .class-add {
     width:;100%;
     margin;10%;
     position:flex;
@@ -147,23 +239,4 @@ div.class-list {
     width: 100%;
     line-height: 10px;
     box-sizing: border-box;
-}
-.title-bar{
-    margin-bottom:2%;
-    position:relative;
-    display:flex;
-    height:100px;
-    background-color:#D4001C;
-    text-transform: uppercase;
-    font-family:cursive;
-    font-weight: bolder;
-    color:white;
-    padding-left:45%;
-}
-.title-bar h1{
-    position:relative;
-    margin-top:4%;
-}
-h1{
-    font-size:30px;
-}
+}*/
