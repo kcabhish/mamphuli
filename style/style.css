@@ -9,8 +9,9 @@ body{
         height:20%;
         width:20%;
         display:inline-flex;
-        flex-flow:row-reverse;
-        flex-wrap:nowrap;
+        flex-flow: row;
+        flex-wrap:wrap;
+        justify-content: center;
         margin:2%;
         box-shadow: 10px 10px 5px #888888;
 
@@ -23,21 +24,19 @@ body{
         margin-bottom: 2%;
         background-color:white;
         border-radius: 10%;
+        min-width: 200px;
         height:20%;
         width:20%;
-        min-width:inherit;
         display:inline-flex;
-        flex-flow: column;
+        flex-flow:column;
+        flex-flow:wrap;
+        justify-content: center;
         margin:4%;
         box-shadow: 10px 10px 5px #888888;
 
     }
 }
 
-div.main-container{
-    height:auto;
-    width:auto;
-}
 
 @media all and (min-width:800px){
  .dashboard-content a{
@@ -58,16 +57,19 @@ div.main-container{
 }
 
 .dash-image{
+    
     height:100%%;
     width:100%;
 }
 .dash-title{
+   
     margin-top:10%;
     font-family:cursive;
     text-align:center;
 
 }
 .dashboard-content .dash-image img {
+    
     position:relative;
     align-content: center;
     height:100%;
@@ -76,7 +78,7 @@ div.main-container{
 
 div.nav-bar{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
     flex-grow: 1;
     background-color:black;
