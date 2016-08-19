@@ -1,4 +1,4 @@
-angular.module("cubicApp").controller("ClassListCtrl",['$scope','classListService',function($scope,classListService){
+angular.module("cubicApp").controller("ClassListCtrl",['$scope','classListService','staticService',function($scope,classListService,staticService){
     /*
     This should grab the list of clases from the service
     */
@@ -8,9 +8,12 @@ angular.module("cubicApp").controller("ClassListCtrl",['$scope','classListServic
         'classTitle':''
     };
     
+    
     $scope.searchText = '';
     
     $scope.addClass = addClass;
+    
+    staticService.header = "Class | Class List";
 
     /*
     This function will add the new class into the list

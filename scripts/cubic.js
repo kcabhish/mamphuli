@@ -17,15 +17,18 @@ cubicApp.config(function($locationProvider,$routeProvider){
                 templateUrl:'/views/templates/class-list.html'
             })
             .when('/employees',{
+                controller : 'EmployeeCtrl',
                 templateUrl : '/views/employee.html'
             })
             .when('/consultants',{
                 templateUrl : '/views/consultants.html'
             })
             .when('/interviews',{
+                controller : 'InterviewCtrl',
                 templateUrl : '/views/interview.html'
             })
             .when('/inventory',{
+                controller : 'InventoryCtrl',
                 templateUrl : '/views/inventory.html'
             })
             

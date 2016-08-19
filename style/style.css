@@ -146,6 +146,7 @@ div.class-list {
     box-sizing: border-box;
 }
 .title-bar{
+    margin-bottom:2%;
     position:relative;
     display:flex;
     height:100px;
