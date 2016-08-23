@@ -23,6 +23,9 @@ h6{
 h7{
     font-size:1em;
 }
+th{
+    text-align:center;
+}
 input[type=text] {
     width: 200px;
     height:25px;   
@@ -175,7 +178,11 @@ button{
     height:100%;
     width:100%;
 }
-
+.active{
+    color:white!important;
+    background-color:#D4001C;
+    position:relative;
+}
 div.nav-bar{
     display: flex;
     flex-wrap: nowrap;
@@ -210,13 +217,12 @@ div.nav-bar{
         position:relative;
     }
     
-    .nav-bar a:
 
 }
 
 @media all and (max-width:500px){
     .nav-bar a{
-        padding:1.5%;
+/*        padding:1.5%;*/
         text-align:center;
         border:none;
         font-weight: bold;
