@@ -19,14 +19,16 @@ angular.module("cubicApp").controller("ClassListCtrl",['$scope','classListServic
     This function will add the new class into the list
     */
     function addClass(){
-        
-        var newClassTitle = {
+        if ($scope.classModel.classTitle.length !==0){
+            var newClassTitle = {
             'id':$scope.classes.length,
             'title':$scope.classModel.classTitle,
             'status':'active'
-        };
+            };
         
-        $scope.classes.push(newClassTitle);
-        $scope.classModel.classTitle = "";
+            $scope.classes.push(newClassTitle);
+            $scope.classModel.classTitle = "";
+        }
+        
     }
 }]);

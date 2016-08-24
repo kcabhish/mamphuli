@@ -21,6 +21,7 @@ cubicApp.config(function($locationProvider,$routeProvider){
                 templateUrl : '/views/employee.html'
             })
             .when('/consultants',{
+                controller : "ConsultantsCtrl",
                 templateUrl : '/views/consultants.html'
             })
             .when('/interviews',{
@@ -31,6 +32,10 @@ cubicApp.config(function($locationProvider,$routeProvider){
                 controller : 'InventoryCtrl',
                 templateUrl : '/views/inventory.html'
             })
+            .when('/application',{
+                controller : 'ApplicationCtrl',
+                templateUrl : '/views/application.html'
+             });
             
     ;
     $locationProvider

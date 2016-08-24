@@ -1,3 +1,3 @@
-angular.module("cubicApp").controller("EmployeeCtrl",['$scope','classListService','staticService',function($scope,classListService,staticService){
+angular.module("cubicApp").controller("EmployeeCtrl",['$scope','staticService',function($scope,staticService){
     staticService.header = "Employee";
 }]);

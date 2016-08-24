@@ -41,7 +41,13 @@ angular.module("cubicApp").service("navBarService",function(){
             'path': 'views#!/inventory',
             'imagepath': '/static_files/svg/inventory.svg',
             'previlege':[]
-        }];
+        },{
+            'name':'Application',
+            'path': 'views#!/application',
+            'imagepath': '/static_files/svg/application.svg',
+            'previlege':[]
+        }              
+        ];
     
     this.classDashboardItems = [
         {
