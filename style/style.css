@@ -5,6 +5,8 @@
 }
 
 div.nav-bar{
+    display:-webkit-flex;
+    display:-moz-flex;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
