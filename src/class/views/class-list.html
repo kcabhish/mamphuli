@@ -1,8 +1,18 @@
-<div class="container-main">
+<div class="container-main" id="class-list">
     <div class="container-head">
         <span class="title">Class List</span>
         <span class="search-option">
-             <input type="text" ng-model="searchText" placeholder="search...">  
+            <form class="form-inline">
+               <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" ng-model="searchText" placeholder="search..."> 
+                        <div class="input-group-addon">
+                           <img src="/static_files/svg/search.svg" style="position:relative;height:20px">
+                        </div>
+                    </div> 
+               </div>
+            </form>
+              
         </span>
              
     </div>

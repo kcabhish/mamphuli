@@ -73,6 +73,12 @@ button{
 }
 .container-head .search-option{
     float:right;
+    position:relative;
+    height:100%;
+}
+.container-head .search-option img{
+    position:relative;
+    height:100%;
 }
 .container-body{
     position:relative;

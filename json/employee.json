@@ -1,0 +1,40 @@
+{
+    "employee":[{
+        "id":"42",
+        "firstName":"Abhishek",
+        "lastName":"KC",
+        "phone":"123-123-1233",
+        "email":"james_bond@gmail.com",
+        "active":"Y"
+    },{
+        "id":"2",
+        "firstName":"Nikesh",
+        "lastName":"Haku Don",
+        "phone":"123-123-1233",
+        "email":"haku_don@hakunara.net",
+        "active":"Y"
+    },{
+        "id":"3",
+        "firstName":"Inspector Bob",
+        "lastName":"Wagle",
+        "phone":"123-098-7678",
+        "email":"inspector.wagle@gmail.com",
+        "active":"Y"
+    },{
+        "id":"4",
+        "firstName":"Bardan",
+        "lastName":"Sigre",
+        "phone":"444-555-4534",
+        "email":"jaykant.sigre@singham.com",
+        "active":"Y"
+    },{
+        "id":"5",
+        "firstName":"Manan Nakhnakota",
+        "lastName":"Sapkota",
+        "phone":"333-222-1111",
+        "email":"manan.sapkota@northdakota.com",
+        "active":"Y"
+    }
+            
+               ]
+}
