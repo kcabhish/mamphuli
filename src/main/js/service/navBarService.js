@@ -64,13 +64,13 @@ angular.module("cubicApp").service("navBarService",function(){
         },
         {
             'name':'Class Sessions',
-            'path':'#!/classes',
+            'path':'#!/classes/session',
             'imagepath': '/static_files/svg/classsession.svg',
             'previlege':[]
         },
         {
             'name':'Instructors',
-            'path':'#!/classes',
+            'path':'#!/classes/instructor',
             'imagepath': '/static_files/svg/instructors.svg',
             'previlege':[]
         }
