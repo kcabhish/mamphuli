@@ -12,5 +12,14 @@
     "angular": "^1.5.8",
     "angular-route": "^1.5.8",
     "bootstrap": "^3.3.7"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jshint-stylish": "^2.2.1"
   }
 }
