@@ -8,42 +8,42 @@ angular.module("cubicApp").service("navBarService",function(){
    */
     this.menuBarItems = [{
             'name':'Home',
-            'path':'views#!/home',
+            'path':'#!/home',
             'imagepath': '/static_files/svg/home.svg',
             'previlege':[]
         },
         {
             'name':'Classes',
-            'path':'views#!/classes',
+            'path':'#!/classes',
             'imagepath': '/static_files/svg/class.svg',
             'previlege':[]
         },
         {
             'name':'Employees',
-            'path': 'views#!/employees',
+            'path': '#!/employees',
             'imagepath': '/static_files/svg/employee2.svg',
             'previlege':[]
         },
         {
             'name':'Consultants',
-            'path': 'views#!/consultants',
+            'path': '#!/consultants',
             'imagepath': '/static_files/svg/consultants.svg',
             'previlege':[]
         },
         {
             'name':'Interviews',
-            'path': 'views#!/interviews',
+            'path': '#!/interviews',
             'imagepath': '/static_files/svg/interview.svg',
             'previlege':[]
         },
         {
             'name':'Inventory',
-            'path': 'views#!/inventory',
+            'path': '#!/inventory',
             'imagepath': '/static_files/svg/inventory.svg',
             'previlege':[]
         },{
             'name':'Application',
-            'path': 'views#!/application',
+            'path': '#!/application',
             'imagepath': '/static_files/svg/application.svg',
             'previlege':[]
         }              
@@ -52,25 +52,25 @@ angular.module("cubicApp").service("navBarService",function(){
     this.classDashboardItems = [
         {
             'name':'Home',
-            'path':'views#!/home',
+            'path':'#!/home',
             'imagepath': '/static_files/svg/home.svg',
             'previlege':[]
         },
         {
             'name':'Class List',
-            'path':'views#!/classes/classlist',
+            'path':'#!/classes/classlist',
             'imagepath': '/static_files/svg/classlist.svg',
             'previlege':[]
         },
         {
             'name':'Class Sessions',
-            'path':'views#!/classes',
+            'path':'#!/classes',
             'imagepath': '/static_files/svg/classsession.svg',
             'previlege':[]
         },
         {
             'name':'Instructors',
-            'path':'views#!/classes',
+            'path':'#!/classes',
             'imagepath': '/static_files/svg/instructors.svg',
             'previlege':[]
         }

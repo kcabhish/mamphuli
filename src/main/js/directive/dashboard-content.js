@@ -6,7 +6,7 @@ angular.module("cubicApp").directive("dashboardContent",[function(){
             imageTitle:'=',
             path:'='
         },
-        templateUrl:"/views/templates/dashboard-content.html",
+        templateUrl:"/src/main/views/dashboard-content.html",
         link:function(scope,elem,attrs){
             
         }

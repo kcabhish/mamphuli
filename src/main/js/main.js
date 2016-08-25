@@ -3,38 +3,38 @@ cubicApp.config(function($locationProvider,$routeProvider){
     $routeProvider
             // route for the home page
             .when('/', {
-                templateUrl : '/views/home.html'
+                templateUrl : '/src/main/views/home.html'
             })
             .when('/home',{
-                templateUrl : '/views/home.html'
+                templateUrl : '/src/main/views/home.html'
             })
             .when('/classes',{
                 controller : 'ClassCtrl',
-                templateUrl : '/views/classes.html'   
+                templateUrl : '/src/class/views/classes.html'   
             })
             .when('/classes/classlist',{
                 controller:'ClassListCtrl',
-                templateUrl:'/views/templates/class-list.html'
+                templateUrl:'/src/class/views/class-list.html'
             })
             .when('/employees',{
                 controller : 'EmployeeCtrl',
-                templateUrl : '/views/employee.html'
+                templateUrl : '/src/employee/views/employee.html'
             })
             .when('/consultants',{
                 controller : "ConsultantsCtrl",
-                templateUrl : '/views/consultants.html'
+                templateUrl : '/src/consultant/views/consultants.html'
             })
             .when('/interviews',{
                 controller : 'InterviewCtrl',
-                templateUrl : '/views/interview.html'
+                templateUrl : '/src/interview/views/interview.html'
             })
             .when('/inventory',{
                 controller : 'InventoryCtrl',
-                templateUrl : '/views/inventory.html'
+                templateUrl : '/src/inventory/views/inventory.html'
             })
             .when('/application',{
                 controller : 'ApplicationCtrl',
-                templateUrl : '/views/application.html'
+                templateUrl : '/src/application/views/application.html'
              });
             
     ;

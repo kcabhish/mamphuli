@@ -2,7 +2,7 @@ angular.module('cubicApp').directive('navBar',['navBarService',function(navBarSe
     return{
         restrict : "EA",
         scope : {},
-        templateUrl:"/views/templates/nav-bar.html",
+        templateUrl:"/src/main/views/nav-bar.html",
         link:function(scope){
             scope.menuItems = navBarService.menuBarItems;
         }

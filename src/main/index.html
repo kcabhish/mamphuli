@@ -2,11 +2,11 @@
 <html ng-app="cubicApp">
     <head>
         <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/style/reset.css" rel="stylesheet">
-        <link href="/style/style.css" rel="stylesheet" >
+        <link href="/src/style/reset.css" rel="stylesheet">
+        <link href="/src/style/style.css" rel="stylesheet" >
         
         <title>Cubic Technologies</title>
-        <base href="/">
+<!--        <base href="/">-->
     </head>
     <body ng-controller="MainCtrl">
         <nav-bar></nav-bar>
@@ -21,23 +21,23 @@
         
         <script type="text/javascript" src="/node_modules/angular/angular.js"></script>
         <script type="text/javascript" src="/node_modules/angular-route/angular-route.js"></script>
-        <script type="text/javascript" src="/scripts/cubic.js"></script>
+        <script type="text/javascript" src="/src/main/js/main.js"></script>
         
-        <script type="text/javascript" src="/scripts/services/staticService.js"></script>
-        <script type="text/javascript" src="/scripts/services/navBarService.js"></script>
-        <script type="text/javascript" src="/scripts/services/classListService.js"></script>
-        <script type="text/javascript" src="/scripts/services/applicationService.js"></script>
+        <script type="text/javascript" src="/src/main/js/service/staticService.js"></script>
+        <script type="text/javascript" src="/src/main/js/service/navBarService.js"></script>
+        <script type="text/javascript" src="/src/class/js/service/classListService.js"></script>
+        <script type="text/javascript" src="/src/application/js/service/applicationService.js"></script>
         
-        <script type="text/javascript" src="/scripts/controllers/MainCtrl.js"></script>
-        <script type="text/javascript" src="/scripts/controllers/ClassCtrl.js"></script>
-        <script type="text/javascript" src="/scripts/controllers/ClassListCtrl.js"></script>
-        <script type="text/javascript" src="/scripts/controllers/EmployeeCtrl.js"></script>
-        <script type="text/javascript" src="/scripts/controllers/InterviewCtrl.js"></script>
-        <script type="text/javascript" src="/scripts/controllers/InventoryCtrl.js"></script>
-        <script type="text/javascript" src="/scripts/controllers/ConsultantsCtrl.js"></script>
-        <script type="text/javascript" src="/scripts/controllers/ApplicationCtrl.js"></script>
-        <script type="text/javascript" src="/scripts/directives/nav-bar.js"></script>
-        <script type="text/javascript" src="/scripts/directives/dashboard-content.js"></script>
+        <script type="text/javascript" src="/src/main/js/controller/MainCtrl.js"></script>
+        <script type="text/javascript" src="/src/class/js/controller/ClassCtrl.js"></script>
+        <script type="text/javascript" src="/src/class/js/controller/ClassListCtrl.js"></script>
+        <script type="text/javascript" src="/src/employee/js/controller/EmployeeCtrl.js"></script>
+        <script type="text/javascript" src="/src/interview/js/controller/InterviewCtrl.js"></script>
+        <script type="text/javascript" src="/src/inventory/js/controller/InventoryCtrl.js"></script>
+        <script type="text/javascript" src="/src/consultant/js/controller/ConsultantsCtrl.js"></script>
+        <script type="text/javascript" src="/src/application/js/controller/ApplicationCtrl.js"></script>
+        <script type="text/javascript" src="/src/main/js/directive/nav-bar.js"></script>
+        <script type="text/javascript" src="/src/main/js/directive/dashboard-content.js"></script>
         
     </body>
 </html>
