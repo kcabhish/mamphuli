@@ -220,8 +220,8 @@ div.nav-bar{
         
     }
     .nav-bar a:hover{
-        color:white;
-        background-color:#D4001C;
+        color:black;
+        background-color:darkgrey;
         position:relative;
     }
     
