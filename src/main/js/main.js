@@ -35,7 +35,10 @@ cubicApp.config(function($locationProvider,$routeProvider){
             .when('/application',{
                 controller : 'ApplicationCtrl',
                 templateUrl : '/src/application/views/application.html'
-             });
+             })
+            .otherwise({
+                templateUrl : "/src/main/error.html"
+            });
             
     ;
     $locationProvider
