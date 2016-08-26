@@ -19,5 +19,4 @@ angular.module("cubicApp").service("applicationService",function(){
             'previlege':[]
         }
     ];    
-    console.log(this.applicationList);
 });

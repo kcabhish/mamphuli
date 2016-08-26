@@ -1,7 +1,7 @@
 angular.module("cubicApp").controller("MainCtrl",['$scope','navBarService','staticService',function($scope,navBarService,staticService){   
     //Sets the scope variable from the navBarService
     $scope.menuItems = navBarService.menuBarItems;
-    
+    navBarService.toggleSelection(1);
     //Sets the title header from service
     $scope.title = staticService.header;
     

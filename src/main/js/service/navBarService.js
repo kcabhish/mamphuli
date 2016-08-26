@@ -7,48 +7,70 @@ angular.module("cubicApp").service("navBarService",function(){
    the user login credentials.
    */
     this.menuBarItems = [{
+            'id':'1',
             'name':'Home',
             'path':'#!/home',
             'imagepath': '/static_files/svg/home.svg',
-            'previlege':[]
+            'previlege':[],
+            'class':'active'
         },
         {
+            'id':'2',
             'name':'Classes',
             'path':'#!/classes',
             'imagepath': '/static_files/svg/class.svg',
-            'previlege':[]
+            'previlege':[],
+            'class':'inactive'
         },
         {
+            'id':'3',
             'name':'Employees',
             'path': '#!/employees',
             'imagepath': '/static_files/svg/employee2.svg',
-            'previlege':[]
+            'previlege':[],
+            'class':''
         },
         {
+            'id':'4',
             'name':'Consultants',
             'path': '#!/consultants',
             'imagepath': '/static_files/svg/consultants.svg',
-            'previlege':[]
+            'previlege':[],
+            'class':''
         },
         {
+            'id':'5',
             'name':'Interviews',
             'path': '#!/interviews',
             'imagepath': '/static_files/svg/interview.svg',
-            'previlege':[]
+            'previlege':[],
+            'class':''
         },
         {
+            'id':'6',
             'name':'Inventory',
             'path': '#!/inventory',
             'imagepath': '/static_files/svg/inventory.svg',
-            'previlege':[]
+            'previlege':[],
+            'class':''
         },{
+            'id':'7',
             'name':'Application',
             'path': '#!/application',
             'imagepath': '/static_files/svg/application.svg',
-            'previlege':[]
+            'previlege':[],
+            'class':''
         }              
         ];
+    //Variable to determine which nav bar is selected
+    this.currentSelection = 1;
     
+    //Function to toggle the active status in the menu bar
+    this.toggleSelection = function(newId){
+        this.menuBarItems[this.currentSelection-1].class = 'inactive';
+        this.menuBarItems[newId-1].class = 'active';
+        this.currentSelection = newId;
+    }
     this.classDashboardItems = [
         {
             'name':'Home',

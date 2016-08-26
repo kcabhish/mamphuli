@@ -3,7 +3,6 @@ angular.module("cubicApp").directive("employeeForm",[function(){
         restrict:"EA",
         templateUrl:"/src/employee/views/employee-form.html",
         link:function(scope){
-            alert("Hello WOrld");
         }
     }
 }]);

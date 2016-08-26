@@ -3,9 +3,11 @@ cubicApp.config(function($locationProvider,$routeProvider){
     $routeProvider
             // route for the home page
             .when('/', {
+                controller:"HomeCtrl",
                 templateUrl : '/src/main/views/home.html'
             })
             .when('/home',{
+                controller:"HomeCtrl",
                 templateUrl : '/src/main/views/home.html'
             })
             .when('/classes',{
