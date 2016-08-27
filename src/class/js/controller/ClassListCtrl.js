@@ -21,9 +21,9 @@ angular.module("cubicApp").controller("ClassListCtrl",['$scope','classListServic
     function addClass(){
         if ($scope.classModel.classTitle.length !==0){
             var newClassTitle = {
-            'id':$scope.classes.length,
-            'title':$scope.classModel.classTitle,
-            'status':'active'
+                'id':$scope.classes.length,
+                'title':$scope.classModel.classTitle,
+                'status':'active'
             };
         
             $scope.classes.push(newClassTitle);

@@ -1,4 +1,4 @@
-<table class="table table-stripped">
+<table class="table">
     <thead>
         <tr>
             <th>#</th>
@@ -9,10 +9,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr ng-repeat="employee in employeesInfo">
             <td></td>
-            <td></td>
-            <td></td>
+            <td>{{employee.lastName}}, {{employee.firstName}}</td>
+            <td>{{employee.phone}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.role}}</td>
         </tr>
     </tbody>
 </table>
