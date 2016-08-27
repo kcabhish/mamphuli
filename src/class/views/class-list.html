@@ -1,37 +1,34 @@
 <div class="container-main" id="class-list">
-    <div class="container-head">
-        <span class="title">Class List</span>
-        <span class="search-option">
-            <form class="form-inline">
-               <div class="form-group">
-                    <div class="input-group">
-                        <input type="text" ng-model="searchText" placeholder="search..."> 
-                        <div class="input-group-addon">
-                           <img src="/static_files/svg/search.svg" style="position:relative;height:20px">
-                        </div>
-                    </div> 
-               </div>
-            </form>
-              
-        </span>
-             
-    </div>
-
     <!--Code below should be rendered as a grid system-->
     <div class="container-body">
-        <table class="table table-hover table-striped">
+        <table class="table">
+            <caption>
+                <h4>Class List</h4>
+                <span class="search">
+                    <input type="text" ng-model="searchText" placeholder="Search..."> 
+                </span>
+                <br>
+                <span class="cap-second-row">
+                    <input type="text" ng-model="classModel.classTitle" placeholder="Enter new class">
+                        <button class="btn btn-success" ng-click="addClass()">Add</button>
+                </span>
+            </caption>
             <thead>
+<!--
                 <tr>
                     <th colspan='2'>
                         Class Title : <input type="text" ng-model="classModel.classTitle" placeholder="Enter new class">
                         <button ng-click="addClass()">Add</button>
                     </th>
                 </tr>
+-->
                 <tr>
                     <th>
-                        Toggle Status
+                        Classes
                     </th>
-                    <th> Classes </th>
+                    <th>
+                        Toggle Status 
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -40,22 +37,6 @@
                     <td>active btn goes here</td>
                 </tr>
             </tbody>
-            <tbody>
-            </tbody>
         </table>
-        <!--<div class="list-header">
-            <span class="left-col">
-                Class List
-            </span>
-            <span class="right-col">
-                <input type="text" ng-model="searchText" placeholder="search...">
-            </span>
-        </div>
-        
-        <div class="list-body" ng-repeat="class in classes|filter:searchText">
-            <span class="left-col">{{class.title}}</span>
-            <span class="right-col">Edit / Remove</span>
-        </div>-->
-
     </div>
 </div>

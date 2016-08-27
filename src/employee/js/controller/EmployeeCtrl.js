@@ -2,7 +2,8 @@ angular.module("cubicApp").controller("EmployeeCtrl",['$scope','staticService',"
     $scope.employee = {
         "firstName":"",
         "lastName":"",
-        "email":""
+        "email":"",
+        "search":""
     };
     staticService.header = "Employee";
     navBarService.toggleSelection(3);

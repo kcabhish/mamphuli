@@ -23,8 +23,29 @@ h6{
 h7{
     font-size:1em;
 }
+table caption{
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color:#446CB3;
+    padding:2%;
+}
+table caption h4{
+    color:white;
+    float:left;
+}
+table caption .search{
+    margin-top:10px;
+    float:right;
+}
+table caption .cap-second-row{
+    clear:both;
+    float:left;
+}
 th{
+    background-color:#446CB3;
+    color:white;
     text-align:center;
+    font-size:20px;
 }
 input[type=text] {
     width: 200px;
@@ -59,6 +80,7 @@ button{
     border-radius: 25px;
     box-shadow: 10px 10px 5px #888888;
 }
+/*
 .container-head{
     margin-top: -30px;
     position: relative;
@@ -80,11 +102,14 @@ button{
     position:relative;
     height:100%;
 }
+*/
 .container-body{
     position:relative;
     height:80%;
+/*
     margin-left:2%;
     margin-right:2%;
+*/
 }
 .container-body .list-header{
     height:15%;
@@ -242,22 +267,3 @@ div.nav-bar{
     }
 }
 
-
-
-/*.class-list .class-add {
-    width:;100%;
-    margin;10%;
-    position:flex;
-    padding:5%;
-    background-color: #D4001C;
-    color: #ffffff;
-    font-size: 2em;
-}
-
-.class-list .class-add input[type=text] {
-    padding: 2%;
-    color: #000000;
-    width: 100%;
-    line-height: 10px;
-    box-sizing: border-box;
-}*/

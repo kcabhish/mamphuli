@@ -1,4 +1,10 @@
 <table class="table">
+    <caption>
+       <h4>Employee List</h4>
+        <span class="search">
+           <input type="text" placeholder="Search" ng-model="employee.search">
+        </span>
+    </caption>
     <thead>
         <tr>
             <th>#</th>
@@ -9,12 +15,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="employee in employeesInfo">
+        <tr ng-repeat="person in employeesInfo|filter:employee.search">
             <td></td>
-            <td>{{employee.lastName}}, {{employee.firstName}}</td>
-            <td>{{employee.phone}}</td>
-            <td>{{employee.email}}</td>
-            <td>{{employee.role}}</td>
+            <td>{{person.lastName}}, {{person.firstName}}</td>
+            <td>{{person.phone}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.role}}</td>
         </tr>
     </tbody>
 </table>
