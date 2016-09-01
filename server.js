@@ -12,7 +12,8 @@ app.get('/landing',function (req, res){
     res.send('In landing page');
 });
 
-app.listen(8080, function () {
+app.listen(8080, function (req,res) {
   console.log('server loaded on port 8080');
+  //res.redirect("http://www.facebook.com");
 });
 
