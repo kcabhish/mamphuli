@@ -78,4 +78,40 @@ INSERT INTO `cms`.`employeecategorytbl` (`employeeid`, `categorytypeid`) VALUES 
 INSERT INTO `cms`.`employeecategorytbl` (`employeeid`, `categorytypeid`) VALUES ('2', '2');
 INSERT INTO `cms`.`employeecategorytbl` (`employeeid`, `categorytypeid`) VALUES ('2', '3');
 
+CREATE TABLE `cms`.`classtbl` (
+  `classid` INT NOT NULL AUTO_INCREMENT,
+  `description` VARCHAR(45) NOT NULL,
+  `active` INT(1) NULL DEFAULT 1,
+  PRIMARY KEY (`classid`),
+  UNIQUE INDEX `classid_UNIQUE` (`classid` ASC));
+  
+INSERT INTO `cms`.`classtbl` (`description`) VALUES ('Basic Java');
+INSERT INTO `cms`.`classtbl` (`description`) VALUES ('Advanced Java');
+INSERT INTO `cms`.`classtbl` (`description`) VALUES ('Angular JS');
+INSERT INTO `cms`.`classtbl` (`description`) VALUES ('.NET');
+INSERT INTO `cms`.`classtbl` (`description`) VALUES ('VM Ware');
+
+
+CREATE TABLE `cms`.`sessiontbl` (
+  `sessionid` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(20) NOT NULL,
+  `classid` INT NOT NULL,
+  `startdate` DATE NULL,
+  `enddate` DATE NULL,
+  `starttime` VARCHAR(15) NULL,
+  `endtime` VARCHAR(15) NULL,
+  `capacity` INT(2) NULL,
+  `active` INT(1) NOT NULL DEFAULT 1,
+  `instructor` INT NOT NULL,
+  PRIMARY KEY (`sessionid`),
+  UNIQUE INDEX `sessionid_UNIQUE` (`sessionid` ASC),
+  INDEX `classid_idx` (`classid` ASC),
+  CONSTRAINT `classid`
+    FOREIGN KEY (`classid`)
+    REFERENCES `cms`.`classtbl` (`classid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+
 
