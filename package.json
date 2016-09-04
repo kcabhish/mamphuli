@@ -1,12 +1,12 @@
 {
   "name": "cubic",
-  "version": "1.0.0",
-  "description": "CMS for cubit tech.",
+  "version": "1.0.1",
+  "description": "CMS for cubic tech.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Abhishek KC, Biplab Wagle",
   "license": "ISC",
   "dependencies": {
     "angular": "^1.5.8",
