@@ -22,11 +22,13 @@ var services ={
         "get":{
             "all":{
                 "url":"/service/companies/all",
-                "query":"SELECT * FROM companytbl"
+                "query":"SELECT * FROM companytbl",
+                "params":[]
             },
             "active":{
                 "url":"/service/companies",
-                "query":"SELECT * FROM companytbl WHERE active = 1"
+                "query":"SELECT * FROM companytbl WHERE active = 1",
+                "params":[]
             },
             "byId":{
                 "url":"/service/companies/:companyid",
@@ -39,11 +41,13 @@ var services ={
         "get":{
             "all":{
                 "url":"/service/employees/all",
-                "query":"SELECT * FROM employeetbl"
+                "query":"SELECT * FROM employeetbl",
+                "params":[]
             },
             "active":{
                 "url":"/service/employees",
-                "query":"SELECT * FROM employeetbl WHERE active = 1"
+                "query":"SELECT * FROM employeetbl WHERE active = 1",
+                "params":[]
             },
             "byId":{
                 "url":"/service/employees/:employeeid",
@@ -52,15 +56,36 @@ var services ={
             }
         }    
     },
+    "categorytype":{
+        "get":{
+            "all":{
+                "url":"/service/categorytype/all",
+                "query":"SELECT * FROM employeetbl",
+                "params":[]
+            },
+            "active":{
+                "url":"/service/categorytype",
+                "query":"SELECT * FROM categorytypetbl WHERE active = 1",
+                "params":[]
+            },
+            "byId":{
+                "url":"/service/categoytype/:categorytypeid",
+                "query":"SELECT * FROM categorytypetbl where categorytypeid = ?",
+                "params":["categorytypeid"]
+            }
+        }    
+    },
     "classes":{
         "get":{
             "all":{
                 "url":"/service/classes/all",
-                "query":"SELECT * FROM classtbl"
+                "query":"SELECT * FROM classtbl",
+                "params":[]
             },
             "active":{
                 "url":"/service/classes",
-                "query":"SELECT * FROM classtbl WHERE active = 1"
+                "query":"SELECT * FROM classtbl WHERE active = 1",
+                "params":[]
             },
             "byId":{
                 "url":"/service/classes/:classid",
@@ -75,38 +100,12 @@ console.log("Service API collections instantiated...");
 //Generating API from service collection
 for(var key in services){
     for (var service in services[key]["get"]){
-        if (service=="byId"){
-            createGetServicesById(services[key]['get'][service].url,services[key]['get'][service].query,services[key]['get'][service].params)
-        }
-        else{
-            createGetServices(services[key]['get'][service].url,services[key]['get'][service].query);
-        }
-        
+            createGetServices(services[key]['get'][service].url,services[key]['get'][service].query,services[key]['get'][service].params); 
     } 
 } 
 console.log("REST API modules ready for launch...")
-
-//Function to create GET requests without ids
 function createGetServices(url,query,params){
-    console.log("Creating service for... " + url);
-    app.get(url,function(req,res,next){
-      req.getConnection(function(err, connection) {
-        if (err) return next(err);
-      
-        connection.query(query, [], function(err, results) {
-            if (err){
-                console.log(err);
-                return next("Mysql error, check your query");  
-            }         
-            res.json(results);
-        });
-      
-      });
-    });
-}
-
-function createGetServicesById(url,query,params){
-    console.log("Creating service for... " + url);
+    console.log("Creating GET services for... " + url);
     app.get(url,function(req,res,next){
         //Array to store dynamic parameters
         var ids = [];
