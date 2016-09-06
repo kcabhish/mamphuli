@@ -1,7 +1,13 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var mysql = require("mysql");
 var connection = require("express-myconnection");
 var app = express();
+
+app.use(bodyParser.json());  //to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({ //to support URL-encoded bodies
+    extended:true
+}));
 
 //Hosting static files
 app.use(express.static(__dirname + '/'));
@@ -14,6 +20,7 @@ app.use(connection(mysql, {
     password : 'cubictech123',
     database : 'cms'
 },'request'));
+
 console.log("Query Setup complete...")
 
 //collection of services.
@@ -35,7 +42,12 @@ var services ={
                 "query":"SELECT * FROM companytbl where companyid = ?",
                 "params":['companyid']
             }
-        }   
+        },
+        "post":{
+            "url":"/service/companies",
+            "query":"INSERT INTO companytbl SET ?",
+            "params":[]
+        }
     },
     "employees":{
         "get":{
@@ -54,7 +66,12 @@ var services ={
                 "query":"SELECT * FROM employeetbl where employeeid = ?",
                 "params":["employeeid"]
             }
-        }    
+        },
+        "post":{
+            "url":"/service/employees",
+            "query":"INSERT INTO employeetbl SET ?",
+            "params":[]
+        }
     },
     "categorytype":{
         "get":{
@@ -69,11 +86,16 @@ var services ={
                 "params":[]
             },
             "byId":{
-                "url":"/service/categoytype/:categorytypeid",
+                "url":"/service/categorytype/:categorytypeid",
                 "query":"SELECT * FROM categorytypetbl where categorytypeid = ?",
                 "params":["categorytypeid"]
             }
-        }    
+        },
+        "post":{
+            "url":"/service/categorytype",
+            "query":"INSERT INTO categorytypetbl SET ?",
+            "params":[]
+        }
     },
     "classes":{
         "get":{
@@ -92,18 +114,33 @@ var services ={
                 "query":"SELECT * FROM classtbl where classid = ?",
                 "params":['classid']
             }
-        }    
+        },
+        "post":{
+            "url":"/service/classes",
+            "query":"INSERT INTO classtbl SET ?",
+            "params":[]
+        }
     }
 };
 console.log("Service API collections instantiated...");
 
 //Generating API from service collection
 for(var key in services){
-    for (var service in services[key]["get"]){
+    if (services[key].hasOwnProperty('post')){
+        createPostServices(services[key].post.url,services[key].post.query,services[key].post.params);   
+    }
+    
+    //Creating rest services for different properties in the GET object
+    if (services[key].hasOwnProperty('get')){
+        for (var service in services[key]["get"]){
             createGetServices(services[key]['get'][service].url,services[key]['get'][service].query,services[key]['get'][service].params); 
-    } 
+        } 
+    }
+    
 } 
-console.log("REST API modules ready for launch...")
+console.log("REST API modules ready for launch...");
+
+//Function to create get services
 function createGetServices(url,query,params){
     console.log("Creating GET services for... " + url);
     app.get(url,function(req,res,next){
@@ -112,18 +149,35 @@ function createGetServices(url,query,params){
         for (var i=0;i<params.length;i++){
             ids.push(req.params[params[i]]);
         }
-   req.getConnection(function(err, connection) {
-      if (err) return next(err);
-      
-      connection.query(query,ids, function(err, results) {
-        if (err){
-          console.log(err);
-          return next("Mysql error, check your query");  
-        }         
-        res.json(results);
-      });      
-    });   
-});
+       req.getConnection(function(err, connection) {
+          if (err) return next(err);
+
+          connection.query(query,ids, function(err, results) {
+            if (err){
+              console.log(err);
+              return next("Mysql error, check your query");  
+            }         
+            res.json(results);
+          });      
+        });   
+    });
+}
+
+function createPostServices(url,query,params){
+    console.log("Creating POST services for... " + url);
+    app.post(url,function(req,res,next){
+        var reqObj = req.body;
+        req.getConnection(function(err, connection){
+            if (err) return next(err);
+            var queryx =connection.query(query,reqObj,function(err,results){
+                if (err){
+                    console.log(err);
+                    return next("Mysql error, check your query ");  
+                }         
+                res.json(results);
+            });
+        });
+    });
 }
 
 
