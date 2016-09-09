@@ -99,6 +99,8 @@ ADD CONSTRAINT `instructor`
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
 
+INSERT INTO `cms`.`sessiontbl` (`name`, `classid`, `startdate`, `enddate`, `starttime`, `endtime`, `capacity`, `active`, `instructor`) VALUES ('UIKC082016', '3', '2016-08-02', '2016-09-15', '10am', '12pm', '20', '1', '1');
+INSERT INTO `cms`.`sessiontbl` (`name`, `classid`, `startdate`, `enddate`, `starttime`, `endtime`, `capacity`, `active`, `instructor`) VALUES ('JAVAKC082016', '2', '2016-08-01', '2016-09-15', '5pm', '7pm', '20', '1', '2');
 
 CREATE TABLE `cms`.`logintbl` (
   `loginid` INT NOT NULL AUTO_INCREMENT,
@@ -170,3 +172,142 @@ INSERT INTO `cms`.`workstatustbl` (`description`) VALUES ('Work Permit');
 INSERT INTO `cms`.`workstatustbl` (`description`) VALUES ('EAD(Green Card)');
 INSERT INTO `cms`.`workstatustbl` (`description`) VALUES ('EAD(OPT)');
 INSERT INTO `cms`.`workstatustbl` (`description`) VALUES ('EAD(CPT)');
+
+CREATE TABLE `cms`.`consultantstatustbl` (
+  `statusid` INT NOT NULL AUTO_INCREMENT,
+  `description` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`statusid`),
+  UNIQUE INDEX `statusid_UNIQUE` (`statusid` ASC));
+
+INSERT INTO `cms`.`consultantstatustbl` (`description`) VALUES ('Not Recruited');
+INSERT INTO `cms`.`consultantstatustbl` (`description`) VALUES ('Recruited');
+INSERT INTO `cms`.`consultantstatustbl` (`description`) VALUES ('Marketing');
+INSERT INTO `cms`.`consultantstatustbl` (`description`) VALUES ('Placed');
+INSERT INTO `cms`.`consultantstatustbl` (`description`) VALUES ('Benched');
+
+CREATE TABLE `cms`.`consultantstbl` (
+  `consultantsid` INT NOT NULL AUTO_INCREMENT,
+  `firstname` VARCHAR(45) NOT NULL,
+  `middlename` VARCHAR(45) NULL,
+  `lastname` VARCHAR(45) NOT NULL,
+  `phone` VARCHAR(15) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `address` VARCHAR(80) NULL,
+  `city` VARCHAR(20) NULL,
+  `zip` VARCHAR(10) NULL,
+  `dob` DATE NULL,
+  `ssn` VARCHAR(11) NULL,
+  `workstatus` INT NULL,
+  `licensenumber` VARCHAR(45) NULL,
+  `licensestate` VARCHAR(45) NULL,
+  `recruiter` INT NULL,
+  `skypeid` VARCHAR(45) NULL,
+  `consultantstatus` INT NULL,
+  `active` INT(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`consultantsid`),
+  UNIQUE INDEX `consultantsid_UNIQUE` (`consultantsid` ASC),
+  INDEX `workstatus_idx` (`workstatus` ASC),
+  INDEX `recruiter_idx` (`recruiter` ASC),
+  INDEX `consultantstatusid_idx` (`consultantstatus` ASC),
+  CONSTRAINT `workstatus`
+    FOREIGN KEY (`workstatus`)
+    REFERENCES `cms`.`workstatustbl` (`statusid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `recruiter`
+    FOREIGN KEY (`recruiter`)
+    REFERENCES `cms`.`employeetbl` (`employeeid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `consultantstatusid`
+    FOREIGN KEY (`consultantstatus`)
+    REFERENCES `cms`.`consultantstatustbl` (`statusid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+INSERT INTO `cms`.`consultantstbl` (`firstname`, `middlename`, `lastname`, `phone`, `email`, `address`, `city`, `zip`, `dob`, `ssn`, `workstatus`, `licensenumber`, `licensestate`, `recruiter`, `skypeid`, `consultantstatus`, `active`) VALUES ('Rubin', '', 'Buddhacharya', '123-456-7891', 'rubin@gmail.com', '1234', 'Irving', '56456', '2012-12-12', '123-32-3214', '3', '#asdf1234', 'ND', '3', 'rubin007', '2', '1');
+
+INSERT INTO `cms`.`consultantstbl` (`firstname`, `lastname`, `phone`, `email`, `address`, `city`, `zip`, `dob`, `ssn`, `workstatus`, `licensenumber`, `licensestate`, `recruiter`, `skypeid`, `consultantstatus`, `active`) VALUES ('Anish', 'KC', '123-123-1234', 'anish.kc@gmail.com', '1234', 'Irving', '12345', '1985-12-29', '123-12-1233', '4', '#asdfasdf', 'MD', '3', 'anish007', '3', '1');
+INSERT INTO `cms`.`consultantstbl` (`firstname`, `lastname`, `phone`, `email`, `address`, `city`, `zip`, `dob`, `ssn`, `workstatus`, `licensenumber`, `licensestate`, `recruiter`, `skypeid`, `consultantstatus`, `active`) VALUES ('Drona', 'Baral', '123-123-1233', 'drona@gmail.com', '1234', 'Dallas', '54678', '1982-12-31', '123-34-1234', '1', '#asdffdasf', 'MN', '3', 'drona123', '1', '1');
+
+CREATE TABLE `cms`.`consultanteducationtbl` (
+  `consultantid` INT NOT NULL,
+  `educationid` INT NOT NULL,
+  `schoolname` VARCHAR(45) NULL,
+  `startdate` DATE NULL,
+  `enddate` DATE NULL,
+  `major` VARCHAR(45) NULL,
+  INDEX `consultantid_idx` (`consultantid` ASC),
+  INDEX `educationid_idx` (`educationid` ASC),
+  CONSTRAINT `consultantid`
+    FOREIGN KEY (`consultantid`)
+    REFERENCES `cms`.`consultantstbl` (`consultantsid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `educationid`
+    FOREIGN KEY (`educationid`)
+    REFERENCES `cms`.`educationtbl` (`educationid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+CREATE TABLE `cms`.`classlisttbl` (
+  `sessionid` INT NOT NULL,
+  `consultantid` INT NOT NULL,
+  INDEX `sessionid_idx` (`sessionid` ASC),
+  INDEX `consultantid_idx` (`consultantid` ASC),
+  CONSTRAINT `sessionid`
+    FOREIGN KEY (`sessionid`)
+    REFERENCES `cms`.`sessiontbl` (`sessionid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `consid`
+    FOREIGN KEY (`consultantid`)
+    REFERENCES `cms`.`consultantstbl` (`consultantsid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+    
+CREATE TABLE `cms`.`attendancetbl` (
+  `sessionid` INT NOT NULL,
+  `consultantid` INT NOT NULL,
+  `date` DATE NOT NULL,
+  INDEX `sessionid_idx` (`sessionid` ASC),
+  INDEX `consultantid_idx` (`consultantid` ASC),
+  CONSTRAINT `sessidatt`
+    FOREIGN KEY (`sessionid`)
+    REFERENCES `cms`.`sessiontbl` (`sessionid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `considatt`
+    FOREIGN KEY (`consultantid`)
+    REFERENCES `cms`.`consultantstbl` (`consultantsid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+CREATE TABLE `cms`.`marketingtbl` (
+  `marketingid` INT NOT NULL AUTO_INCREMENT,
+  `consultantid` INT NOT NULL,
+  `phone` VARCHAR(45) NULL,
+  `email` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  `skype` VARCHAR(45) NULL,
+  `skypepassword` VARCHAR(45) NULL,
+  `vc` INT NULL,
+  `comments` VARCHAR(45) NULL,
+  `active` VARCHAR(45) NULL,
+  PRIMARY KEY (`marketingid`),
+  UNIQUE INDEX `marketingid_UNIQUE` (`marketingid` ASC),
+  INDEX `vcid_idx` (`vc` ASC),
+  INDEX `conid_idx` (`consultantid` ASC),
+  CONSTRAINT `vcid`
+    FOREIGN KEY (`vc`)
+    REFERENCES `cms`.`employeetbl` (`employeeid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `conid`
+    FOREIGN KEY (`consultantid`)
+    REFERENCES `cms`.`consultantstbl` (`consultantsid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+
