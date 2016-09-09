@@ -120,6 +120,49 @@ var services ={
             "query":"INSERT INTO classtbl SET ?",
             "params":[]
         }
+    },
+    "workstatus":{
+        "get":{
+            "all":{
+                "url":"/service/workstatus/all",
+                "query":"SELECT * FROM workstatustbl",
+                "params":[]
+            },
+            "active":{
+                "url":"/service/workstatus",
+                "query":"SELECT * FROM workstatustbl WHERE active = 1",
+                "params":[]
+            },
+            "byId":{
+                "url":"/service/workstatus/:workstatusid",
+                "query":"SELECT * FROM workstatustbl where companyid = ?",
+                "params":['workstatusid']
+            }
+        },
+        "post":{
+            "url":"/service/workstatus",
+            "query":"INSERT INTO workstatustbl SET ?",
+            "params":[]
+        }
+    },
+    "education":{
+        "get":{
+            "all":{
+                "url":"/service/education",
+                "query":"SELECT * FROM educationtbl",
+                "params":[]
+            },
+            "byId":{
+                "url":"/service/education/:educationid",
+                "query":"SELECT * FROM educationtbl where companyid = ?",
+                "params":['educationid']
+            }
+        },
+        "post":{
+            "url":"/service/education",
+            "query":"INSERT INTO educationtbl SET ?",
+            "params":[]
+        }
     }
 };
 console.log("Service API collections instantiated...");
