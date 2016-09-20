@@ -47,6 +47,16 @@ var services ={
             "url":"/service/companies",
             "query":"INSERT INTO companytbl SET ?",
             "params":[]
+        },
+        "put":{
+            "url":"/service/companies/:id",
+            "query":"UPDATE companytbl SET ? WHERE companyid = ?",
+            "params":[]
+        },
+        "delete":{
+            "url":"/service/companies/:companyid",
+            "query":"DELETE FROM companytbl WHERE companyid = ?",
+            "params":["companyid"]
         }
     },
     "employees":{
@@ -70,6 +80,11 @@ var services ={
         "post":{
             "url":"/service/employees",
             "query":"INSERT INTO employeetbl SET ?",
+            "params":[]
+        },
+        "put":{
+            "url":"/service/employees/:id",
+            "query":"UPDATE employeetbl SET ? WHERE employeeid = ?",
             "params":[]
         }
     },
@@ -95,6 +110,11 @@ var services ={
             "url":"/service/categorytype",
             "query":"INSERT INTO categorytypetbl SET ?",
             "params":[]
+        },
+        "put":{
+            "url":"/service/categorytype/:id",
+            "query":"UPDATE categorytbl SET ? WHERE categorytypeid = ?",
+            "params":[]
         }
     },
     "classes":{
@@ -118,6 +138,11 @@ var services ={
         "post":{
             "url":"/service/classes",
             "query":"INSERT INTO classtbl SET ?",
+            "params":[]
+        },
+        "put":{
+            "url":"/service/classes/:id",
+            "query":"UPDATE classtbl SET ? WHERE classid = ?",
             "params":[]
         }
     },
@@ -179,6 +204,12 @@ for(var key in services){
             createGetServices(services[key]['get'][service].url,services[key]['get'][service].query,services[key]['get'][service].params); 
         } 
     }
+    if (services[key].hasOwnProperty('put')){
+        createPutServices(services[key].put.url,services[key].put.query,services[key].put.params);
+    }
+    if (services[key].hasOwnProperty('delete')){
+        createDeleteServices(services[key].delete.url,services[key].delete.query,services[key].delete.params);
+    }
     
 } 
 console.log("REST API modules ready for launch...");
@@ -206,6 +237,9 @@ function createGetServices(url,query,params){
     });
 }
 
+/**
+Function to genreate the post service
+**/
 function createPostServices(url,query,params){
     console.log("Creating POST services for... " + url);
     app.post(url,function(req,res,next){
@@ -223,6 +257,49 @@ function createPostServices(url,query,params){
     });
 }
 
+/**
+Function to generate the put services
+**/
+function createPutServices(url,query,params){
+    console.log("Creating PUT services for... "+url);
+    app.put(url,function(req,res,next){
+        var id=req.params.id;
+        var reqObj = req.body;
+        req.getConnection(function(err, connection){
+            if (err) return next(err);
+            var queryx =connection.query(query,[reqObj,id],function(err,results){
+                if (err){
+                    console.log(err);
+                    return next("Mysql error, check your query ");  
+                }         
+                res.json(results);
+            });
+        });
+    });
+}
+
+function createDeleteServices(url,query,params){
+    console.log("Creating DELETE services for ... "+url);
+    app.delete(url,function(req,res,next){
+        //Array to store dynamic parameters
+        var ids = [];
+        for (var i=0;i<params.length;i++){
+            ids.push(req.params[params[i]]);
+        }
+        req.getConnection(function(err, connection){
+            if (err){
+                return next(err);
+            }
+            connection.query(query, ids, function(err, results){
+                if (err){
+                    console.log(err);
+                }
+                res.json(results);
+            })
+        })
+        
+    })
+}
 
 //Routes
 app.get('/', function (req, res) {
