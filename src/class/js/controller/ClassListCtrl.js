@@ -1,13 +1,11 @@
 angular.module("cubicApp").controller("ClassListCtrl",['$scope','classListService','staticService',function($scope,classListService,staticService){
-    /*
-    This should grab the list of clases from the service
-    */
-    $scope.classes = classListService.classList;
-    //This object will be used of ng-model
-    $scope.classModel = {
-        'classTitle':''
-    };
+    $scope.classes = [];
     
+    //Calling service to get class list
+    var classList = classListService.getClassList();
+    classList.then(function(response){
+        $scope.classes = response;
+    });
     
     $scope.searchText = '';
     
@@ -21,13 +19,12 @@ angular.module("cubicApp").controller("ClassListCtrl",['$scope','classListServic
     function addClass(){
         if ($scope.classModel.classTitle.length !==0){
             var newClassTitle = {
-                'id':$scope.classes.length,
-                'title':$scope.classModel.classTitle,
-                'status':'active'
+                'description':$scope.classModel.classTitle,
+                'active':1
             };
-        
-            $scope.classes.push(newClassTitle);
-            $scope.classModel.classTitle = "";
+            
+            //Need to check for duplicate before entry
+            classListService.postClass(newClassTitle);
         }
         
     }

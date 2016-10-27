@@ -14,14 +14,6 @@
                 </span>
             </caption>
             <thead>
-<!--
-                <tr>
-                    <th colspan='2'>
-                        Class Title : <input type="text" ng-model="classModel.classTitle" placeholder="Enter new class">
-                        <button ng-click="addClass()">Add</button>
-                    </th>
-                </tr>
--->
                 <tr>
                     <th>
                         Classes
@@ -33,7 +25,7 @@
             </thead>
             <tbody>
                 <tr ng-repeat="class in classes|filter:searchText">
-                    <td>{{class.title}}</td>
+                    <td>{{class.description}}</td>
                     <td>active btn goes here</td>
                 </tr>
             </tbody>

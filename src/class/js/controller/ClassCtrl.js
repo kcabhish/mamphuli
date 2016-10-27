@@ -2,8 +2,4 @@ angular.module("cubicApp").controller("ClassCtrl",['$scope','navBarService','sta
     $scope.classDashboardItems = navBarService.classDashboardItems;
     navBarService.toggleSelection(2);
     staticService.header = "Class";
-    
-    for (var i=0; i < $scope.classDashboardItems.length;i++){
-        
-    }
 }]);
