@@ -12,6 +12,7 @@
     "angular": "^1.5.8",
     "angular-mocks": "^1.5.8",
     "angular-route": "^1.5.8",
+    "angular-smart-table": "^2.1.8",
     "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
     "express-myconnection": "^1.0.4"
