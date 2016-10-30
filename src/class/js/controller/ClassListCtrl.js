@@ -24,6 +24,7 @@ angular.module("cubicApp").controller("ClassListCtrl",['$scope','classListServic
         });
         return flag;
     }
+    
     /*
     This function will add the new class into the list
     */
