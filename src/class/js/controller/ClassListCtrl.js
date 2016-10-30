@@ -10,19 +10,19 @@ angular.module("cubicApp").controller("ClassListCtrl",['$scope','classListServic
     var classListPromise = classListService.getClassList();
     classListPromise.then(function(response){
         $scope.classes = response;
-        checkDuplicate();
     });
     
     staticService.header = "Class | Class List";
 
     //This function will check for duplicate entries
     function checkDuplicate(){
+        var flag = false;
         $scope.classes.forEach(function(classObj){
-            if (classObj.description.toLowerCase()===$scope.classModel.classTitle.toLowerCase){
-                return true;
+            if (classObj.description.toLowerCase()===$scope.classModel.classTitle.toLowerCase()){
+                flag = true;
             }
         });
-        return false;
+        return flag;
     }
     /*
     This function will add the new class into the list
@@ -33,14 +33,22 @@ angular.module("cubicApp").controller("ClassListCtrl",['$scope','classListServic
                 'description':$scope.classModel.classTitle,
                 'active':1
             };
-            classListService.postClass(newClassTitle).then(function(){
-                //Calling service to get class list
-                var classListPromise = classListService.getClassList();
-                classListPromise.then(function(response){
-                    $scope.classes = response;
+            
+            if (!checkDuplicate()){
+                classListService.postClass(newClassTitle).then(function(){
+                    //Calling service to get class list
+                    var classListPromise = classListService.getClassList();
+                    classListPromise.then(function(response){
+                        $scope.classes = response;
+                    });
                 });
-            });
-            $scope.classModel.classTitle = "";
+                $scope.classModel.classTitle = "";
+            }
+            else{
+                alert("Duplcate: The class you are trying to insert already exists");
+            }
+            
+            
         }
         
     }

@@ -1,13 +1,19 @@
 angular.module("cubicApp").service("classListService",["$http",function($http){
+    this.classList = [];
+    var that  = this;
     var getClassList = function(){
         return $http({
             method:"GET",
             url:"/service/classes"
         }).then(function(result){
+            that.classList = result.data;
             return result.data
         });
     }
     
+    
+    //Duplicate entries are currently being checked on the logic side.
+    //@TODO Need to add validaion on sql side as well
     var postClass = function(dataParam){
         return $http({
             method:"POST",
@@ -20,24 +26,5 @@ angular.module("cubicApp").service("classListService",["$http",function($http){
     
     this.postClass = postClass;
     this.getClassList = getClassList;
-//   this.classList = [
-//       {
-//           'id':1,
-//           'title':'Java Basics',
-//           'status':'active'       
-//       },{
-//           'id':2,
-//           'title':'Java Advance',
-//           'status':'active'
-//       },{
-//           'id':3,
-//           'title':'UI',
-//           'status':'active'
-//       },{
-//           'id':4,
-//           'title':'C#',
-//           'status':'active'
-//       }
-//       
-//   ]; 
+
 }]);
