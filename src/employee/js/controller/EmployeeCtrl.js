@@ -30,7 +30,15 @@ angular.module("cubicApp").controller("EmployeeCtrl",['$scope','staticService',"
             "phone":$scope.employee.phone
             
         };
-        $scope.employeesInfo.push(newEmployee);
+        
+        //Need to add validation for the form to avoid empty form entries
+        employeeService.postEmployee(newEmployee).then(function(){
+            //Calling service to get class list
+             var employeeListPromise = employeeService.getEmployeeList();
+            employeeListPromise.then(function(response){
+                $scope.employeesInfo = response;
+            });
+        });
     }
     
 }]);
