@@ -14,9 +14,9 @@
                 </span>
             </caption>
             <thead>
-                <tr>
+                <tr class="sortable-headers">
                     <th>
-                        Classes
+                        <span ng-click="sortFunction('description')">Classes</span>
                     </th>
                     <th>
                         Toggle Status 
@@ -24,7 +24,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="class in classes|filter:searchText">
+                <tr ng-repeat="class in classes|filter:searchText|orderBy:sortBy:sortReverse">
                     <td>{{class.description}}</td>
                     <td>active btn goes here</td>
                 </tr>

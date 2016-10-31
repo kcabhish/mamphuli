@@ -1,4 +1,17 @@
 angular.module("cubicApp").controller("ClassListCtrl",['$scope','classListService','staticService',function($scope,classListService,staticService){
+    $scope.sortBy="description";
+    $scope.sortReverse=false;
+            
+    $scope.sortFunction = function(sortBy){
+        if ($scope.sortBy!=sortBy){
+            $scope.sortReverse = false;
+            $scope.sortBy=sortBy;
+        }
+        else{
+            $scope.sortReverse=!$scope.sortReverse;
+        }
+    }
+    
     $scope.classes = [];
     $scope.classModel = {
         'classTitle':''
