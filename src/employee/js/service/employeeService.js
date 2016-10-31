@@ -10,5 +10,5 @@ angular.module("cubicApp").service("employeeService",['$http',function($http){
             return result.data
         });
     }
-   // return $http.get("/json/employee.json");
+   
 }]);

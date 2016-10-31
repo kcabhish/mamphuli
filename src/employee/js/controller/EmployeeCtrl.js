@@ -9,6 +9,7 @@ angular.module("cubicApp").controller("EmployeeCtrl",['$scope','staticService',"
         "firstname":"",
         "lastname":"",
         "email":"",
+        "phone":"",
         "search":""
     };
     
@@ -23,9 +24,10 @@ angular.module("cubicApp").controller("EmployeeCtrl",['$scope','staticService',"
     //Function to add new employee to the list
     $scope.addEmployee = function(){
         var newEmployee = {
-            "firstName":$scope.employee.firstName,
-            "lastName":$scope.employee.lastName,
-            "email":$scope.employee.email
+            "firstname":$scope.employee.firstname,
+            "lastname":$scope.employee.lastname,
+            "email":$scope.employee.email,
+            "phone":$scope.employee.phone
             
         };
         $scope.employeesInfo.push(newEmployee);
