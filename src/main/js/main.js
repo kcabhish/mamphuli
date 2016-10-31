@@ -1,4 +1,4 @@
-var cubicApp = angular.module("cubicApp",['ngRoute']);
+var cubicApp = angular.module("cubicApp",['ngRoute','smart-table']);
 cubicApp.config(function($locationProvider,$routeProvider){
     $routeProvider
             // route for the home page

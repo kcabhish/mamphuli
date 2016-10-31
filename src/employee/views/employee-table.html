@@ -2,22 +2,30 @@
     <caption>
        <h4>Employee List</h4>
         <span class="search">
-           <input type="text" placeholder="Search" ng-model="employee.search">
+           <input type="text" placeholder="Search" class="form-control" ng-model="employee.search">
         </span>
     </caption>
     <thead>
-        <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Email</th>
+        <tr class="sortable-headers">
+            <th>
+                #
+            </th>
+            <th>
+                <span ng-click="sortFunction('name')">Name</span>
+            </th>
+            <th>
+                <span ng-click="sortFunction('phone')">Phone</span>
+            </th>
+            <th>
+                <span ng-click="sortFunction('email')">Email</span>
+            </th>
             <th>Role</th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="person in employeesInfo|filter:employee.search">
+        <tr ng-repeat="person in employeesInfo|filter:employee.search|orderBy:sortBy:sortReverse">
             <td></td>
-            <td>{{person.lastName}}, {{person.firstName}}</td>
+            <td>{{person.lastname}}, {{person.firstname}}</td>
             <td>{{person.phone}}</td>
             <td>{{person.email}}</td>
             <td>{{person.role}}</td>

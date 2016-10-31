@@ -1,16 +1,25 @@
 angular.module("cubicApp").controller("EmployeeCtrl",['$scope','staticService',"navBarService","employeeService",function($scope,staticService,navBarService,employeeService){
+    
+    $scope.employeesInfo=[];
+    
+    
+    
+    //Object for the model values
     $scope.employee = {
-        "firstName":"",
-        "lastName":"",
+        "firstname":"",
+        "lastname":"",
         "email":"",
         "search":""
     };
+    
     staticService.header = "Employee";
     navBarService.toggleSelection(3);
-    employeeService.success(function(data){
-        $scope.employeesInfo = data.employee;
+    //Calling service to get class list
+    var employeeListPromise = employeeService.getEmployeeList();
+    employeeListPromise.then(function(response){
+        $scope.employeesInfo = response;
     });
-    
+
     //Function to add new employee to the list
     $scope.addEmployee = function(){
         var newEmployee = {
