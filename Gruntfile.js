@@ -43,12 +43,33 @@ module.exports = function(grunt) {
           'dist/css/style.min.css': 'src/style/*.css'
         }
       }
+    },
+    
+    less: {
+      development: {
+        options: {
+          compress: true,
+          yuicompress: true,
+          optimization: 2
+        },
+        files: {
+          "dist/less/main.css": "src/less/sample.less" // destination file and source file
+        }
+      }
+    },
+    watch: {
+      styles: {
+        files: ['less/**/*.less'], // which files to watch
+        tasks: ['less'],
+        options: {
+          nospawn: true
+        }
+      }
     }
-
     // all of our configuration will go here
-
+    
   });
-
+  grunt.registerTask('default', ['less', 'uglify','cssmin']);
   // ===========================================================================
   // LOAD GRUNT PLUGINS ========================================================
   // ===========================================================================
